@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     
     if @message.save
-      flach[:success] = "Messageが正常に投稿されました"
+      flash[:success] = "Messageが正常に投稿されました"
       redirect_to @message
     else
       flash.now[:danger] = "Messageが投稿されませんでした"
@@ -48,7 +48,7 @@ class MessagesController < ApplicationController
   private
   
   def message_params
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :title)
   end
   
   def set_message
