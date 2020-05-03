@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+=begin
+    Message.create(title: "test title1", content: "test content1")
+    Message.create(title: "test title2", content: "test content2")
+    Message.create(title: "test title3", content: "test content3")
+=end
+(1..100).each do |number|
+   Message.create(title: "test title" + number.to_s, content: "test content" + number.to_s) 
+end
